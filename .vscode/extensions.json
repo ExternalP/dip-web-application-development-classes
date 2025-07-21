@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "leizongmin.node-module-intellisense",
+        "burkeholland.simple-react-snippets",
+        "ms-vscode-remote.remote-containers",
+        "ecmel.vscode-html-css"
+    ]
+}
