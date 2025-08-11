@@ -4,6 +4,7 @@
         "burkeholland.simple-react-snippets",
         "ms-vscode-remote.remote-containers",
         "ecmel.vscode-html-css",
-        "pulkitgangwar.nextjs-snippets"
+        "pulkitgangwar.nextjs-snippets",
+        "mgmcdermott.vscode-language-babel"
     ]
 }
