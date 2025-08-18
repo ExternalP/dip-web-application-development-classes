@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const fetchApodButton = document.getElementById("fetch-apod");
   const apodContent = document.getElementById("apod-content");
-  const apiKey = "YOUR_API_KEY";
+  const apiKey = "GskipOjsXgUQGg0fe8Gy2KiDqP6zCcqWqsaCETs2";
 
   fetchApodButton.addEventListener("click", () => {
     const date = document.getElementById("date").value;
@@ -16,6 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. check all the form fields to see which fields have data
     // 2. add them to the apiURL as parameters
     // 3. Test the responses in the Network tab
+    let fieldArr = {"date": date, "start_date": startDate, "end_date": endDate, "count": count, "thumbs": thumbs};
+    for (let key in fieldArr) {
+      if (fieldArr[key].length != 0) {
+        apiUrl += '&' + key + '=' + fieldArr[key];
+      }
+    }
+    console.log("apiUrl:" + apiUrl);
 
     // Challenge 2
     // 1. add the following headers to your API call content type, user agent & cache control
@@ -25,6 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetch(apiUrl, {
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        // "Accept": "application/json",
+        "Cache-Control": "no-cache",
+        // "User-Agent": "",
+        // "User-Agent": "PostmanRuntime/7.44.1",
+      }
     })
       // Challenge 3
       // 1. change the anonymous arrow function below to check if the response code is 200(ok)
@@ -32,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // 3. if not ok throw a new error which includes the status code
       // 4. Test the responses in the Network tab
       .then((response) => {
+        console.log(response);
         return response.json();
       })
       .then((data) => {
@@ -60,24 +75,24 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         } else {
           apodContent.innerHTML = "";
-          if (item.media_type === "image") {
+          if (data.media_type === "image") {
             apodContent.innerHTML += `
                             <figure class="image is-4by3">
-                                <img src="${item.url}" alt="${item.title}">
+                                <img src="${data.url}" alt="${data.title}">
                             </figure>
-                            <h2 class="title is-4">${item.title}</h2>
-                            <p>${item.explanation}</p>
+                            <h2 class="title is-4">${data.title}</h2>
+                            <p>${data.explanation}</p>
                         `;
-          } else if (item.media_type === "video") {
+          } else if (data.media_type === "video") {
             apodContent.innerHTML += `
                             <div class="video-apodContent">
-                                <iframe src="${item.url}" frameborder="0" allowfullscreen></iframe>
+                                <iframe src="${data.url}" frameborder="0" allowfullscreen></iframe>
                             </div>
-                            <h2 class="title is-4">${item.title}</h2>
-                            <p>${item.explanation}</p>
+                            <h2 class="title is-4">${data.title}</h2>
+                            <p>${data.explanation}</p>
                         `;
           } else {
-            apodContent.innerHTML += `<p>Media type not supported: ${item.media_type}</p>`;
+            apodContent.innerHTML += `<p>Media type not supported: ${data.media_type}</p>`;
           }
         }
       })
