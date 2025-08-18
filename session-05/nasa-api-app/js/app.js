@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchApodButton = document.getElementById("fetch-apod");
   const apodContent = document.getElementById("apod-content");
   const apiKey = "GskipOjsXgUQGg0fe8Gy2KiDqP6zCcqWqsaCETs2";
+  // const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+
 
   fetchApodButton.addEventListener("click", () => {
     const date = document.getElementById("date").value;
@@ -16,6 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. check all the form fields to see which fields have data
     // 2. add them to the apiURL as parameters
     // 3. Test the responses in the Network tab
+
+    /* let params = [];
+    if (count) params.push(`count=${count}`);
+    if (startDate) params.push(`start_date=${startDate}`);
+    if (endDate) params.push(`end_date=${endDate}`);
+    if (date) params.push(`date=${date}`);
+    if (thumbs) params.push(`thumbs=${thumbs}`);
+
+    // console.log(params);
+    apiUrl += `&${params.join("&")}`;
+    console.log(apiUrl); */
+
     let fieldArr = {"date": date, "start_date": startDate, "end_date": endDate, "count": count, "thumbs": thumbs};
     for (let key in fieldArr) {
       if (fieldArr[key].length != 0) {
@@ -23,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     console.log("apiUrl:" + apiUrl);
+
 
     // Challenge 2
     // 1. add the following headers to your API call content type, user agent & cache control
@@ -41,13 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
       // Challenge 3
-      // 1. change the anonymous arrow function below to check if the response code is 200(ok)
-      // 2. if the response is ok return the response.json() object
+
       // 3. if not ok throw a new error which includes the status code
       // 4. Test the responses in the Network tab
       .then((response) => {
-        console.log(response);
-        return response.json();
+        // 1. change the anonymous arrow function below to check if the response code is 200(ok)
+        // 2. if the response is ok return the response.json() object
+        if (response.ok) {
+          console.log(response);
+          return response.json();
+        } else {
+          throw new Error(`${console.log(response.status)}`);
+        }
       })
       .then((data) => {
         if (Array.isArray(data)) {
