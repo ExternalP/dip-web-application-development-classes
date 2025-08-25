@@ -14,15 +14,14 @@ let template = function (props) {
 		'</ul>';
 	return html;
 };
-
 // Render the template into the UI
-let app = document.querySelector('#app');
-app.innerHTML = template(data);
-
+let app = document.querySelector("#list");
 
 // Update the UI
-data.books.push('Harry Potter IV');
-data.books.push('Harry Potter V');
+data.books.push("Harry Potter IV");
+data.books.push("Harry Potter V");
+// data.books.pop();
+// data.books[1] = "Harry Potter V";
 app.innerHTML = template(data);
 
 
