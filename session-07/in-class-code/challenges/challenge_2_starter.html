@@ -6,7 +6,9 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <!-- Babel Script -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/jsx">
+    <link rel="stylesheet" href="challenge_2.css" />
+    <!-- <script type="text/jsx"> -->
+    <script type="text/babel">
       const domNode = document.getElementById('app');
       const root = ReactDOM.createRoot(domNode);
       root.render(<App />);
@@ -22,6 +24,25 @@
         );
       }
 
+      function ItemArray({ items }) {
+        return (
+          <table>
+            <tr>
+              {console.log(Object.keys(items[0]))}
+              {Object.keys(items[0]).map((key) => (
+                <th key={key}>{key}</th>  
+              ))}
+            </tr>
+            {items.map((item) => (
+                <tr>
+                  <td>{item.id}</td>
+                  <td>{item.title}</td>
+                </tr>
+            ))}
+          </table>
+        );
+      }
+
       // Usage example
       function App() {
         const items = [
@@ -29,11 +50,12 @@
           { id: 2, title: "Second Item" },
           { id: 3, title: "Third Item" },
         ];
-
+        
         // Your code goes here to return JSX
         // Hint: you will need to loop through these items
         // render
-        return <ItemList items={items} />
+        // return <ItemList items={items} />
+        return <ItemArray items={items} />
       }
     </script>
   </body>
