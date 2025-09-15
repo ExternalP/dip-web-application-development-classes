@@ -53,7 +53,7 @@
         // Destructure the props and render out both users in their own component in a fragment
         return (
           <>
-            <User 
+            {/* <User 
               firstName={userObject.firstName}
               lastName={userObject.lastName}
               age={userObject.age}
@@ -70,7 +70,9 @@
               skills={userObject2.skills}
               socialProfiles={userObject2.socialProfiles}
               isEmployed={userObject2.isEmployed}
-            />
+            /> */}
+            <User {...userObject} />
+            <User {...userObject2} />
           </>
         );
       }

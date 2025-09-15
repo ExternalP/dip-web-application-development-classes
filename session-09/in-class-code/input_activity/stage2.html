@@ -1,3 +1,4 @@
+session-09/in-class-code/input_activity/stage_start.html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
   </head>
   <body>
     <!-- Other HTML inputs and buttons -->
-     <div id="react-date-input"></div>
+    <div id="react-date-input"></div>
     <form>
       <div class="field">
         <label class="label">Date (YYYY-MM-DD)</label>
@@ -65,24 +66,26 @@
 
       const handleChange = (event) => {
         const newDate = event.target.value;
-        // debugger;
+        debugger;
       };
 
-      // debugger;
+      //   debugger;
 
       function DateInputComponent() {
         return (
-          <input 
-            className="input" 
-            type="date" 
-            style={inputStyle} 
-            value={newDate} 
-            onChange={handleChange} 
+          <input
+            className="input"
+            type="date"
+            style={inputStyle}
+            value={newDate}
+            onChange={handleChange}
           />
         );
       }
 
-      const root = ReactDOM.createRoot(document.getElementById("react-date-input"));
+      const root = ReactDOM.createRoot(
+        document.getElementById("react-date-input")
+      );
       root.render(<DateInputComponent />);
     </script>
   </body>
