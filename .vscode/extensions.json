@@ -7,6 +7,10 @@
         "pulkitgangwar.nextjs-snippets",
         "mgmcdermott.vscode-language-babel",
         "skyran.js-jsx-snippets",
-        "riazxrazor.html-to-jsx"
+        "riazxrazor.html-to-jsx",
+        "icaruk.jsx-format",
+        "angelorafael.jsx-html-tags",
+        "formulahendry.auto-close-tag",
+        "formulahendry.code-runner"
     ]
 }

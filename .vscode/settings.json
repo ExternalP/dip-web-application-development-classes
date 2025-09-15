@@ -1,4 +1,9 @@
 {
+  "[html]": {
+    // Disabled so auto-rename-tag can be used as linkedEditing doesn't work in jsx/babel tags.
+    "editor.linkedEditing": false,
+  },
+
   "liveServer.settings.port": 5500,
   // "liveServer.settings.root": "./session-03"
 }
