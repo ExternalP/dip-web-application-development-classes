@@ -51,6 +51,28 @@
         };
 
         // Destructure the props and render out both users in their own component in a fragment
+        return (
+          <>
+            <User 
+              firstName={userObject.firstName}
+              lastName={userObject.lastName}
+              age={userObject.age}
+              address={userObject.address}
+              skills={userObject.skills}
+              socialProfiles={userObject.socialProfiles}
+              isEmployed={userObject.isEmployed}
+            />
+            <User 
+              firstName={userObject2.firstName}
+              lastName={userObject2.lastName}
+              age={userObject2.age}
+              address={userObject2.address}
+              skills={userObject2.skills}
+              socialProfiles={userObject2.socialProfiles}
+              isEmployed={userObject2.isEmployed}
+            />
+          </>
+        );
       }
 
       // Destructuring Example
@@ -70,6 +92,15 @@
               Name: {firstName} {lastName}
             </h2>
             <p>Age: {age}</p>
+            <p>Address: {Object.values(address).join(", ")}</p>
+            <p>Social Profiles: 
+              <ul>
+                {Object.entries(socialProfiles).map(([key, value]) => (
+                  <li> {key}: {value} </li>
+                ))}
+              </ul>
+            </p>
+            <p>Employed: {/* (isEmployed) (<>true : false</>) */}</p>
             <p>Skills: {skills.join(", ")}</p>
           </div>
         );

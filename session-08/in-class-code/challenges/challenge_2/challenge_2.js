@@ -3,7 +3,7 @@ import { getUserInfo, formatUserSkills } from './utils'; // Step 1 fix the impor
 
 function UserProfile(props) {
   // Step 2 create object correctly
-  const user = new Object;
+  const user = new Object; {
     firstName = 'John';
     lastName = 'Doe';
     age = 30;

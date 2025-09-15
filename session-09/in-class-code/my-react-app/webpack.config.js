@@ -20,7 +20,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/web-components.html",
+      // template: "./public/web-components.html",
+      template: "./public/index.html",
     }),
   ],
   devServer: {

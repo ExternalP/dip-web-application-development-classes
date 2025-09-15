@@ -5,6 +5,8 @@
         "ms-vscode-remote.remote-containers",
         "ecmel.vscode-html-css",
         "pulkitgangwar.nextjs-snippets",
-        "mgmcdermott.vscode-language-babel"
+        "mgmcdermott.vscode-language-babel",
+        "skyran.js-jsx-snippets",
+        "riazxrazor.html-to-jsx"
     ]
 }
