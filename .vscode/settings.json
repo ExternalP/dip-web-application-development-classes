@@ -5,5 +5,11 @@
   },
 
   "liveServer.settings.port": 5500,
+  "favorites.resources": [
+    {
+      "filePath": "session-08\\in-class-code\\my-react-app\\readme.md",
+      "group": "Default"
+    }
+  ],
   // "liveServer.settings.root": "./session-03"
 }

@@ -8,21 +8,19 @@
     <!-- Click through the steps in the chapter -->
     <script type="text/babel">
       const app = document.getElementById("app");
-
-      {
-        /* Run and then move the code inside the Homepage component */
-      }
-      const [likes, setLikes] = React.useState(0);
-
-      function handleClick() {
-        setLikes(likes + 1);
-      }
-
+      
       function Header({ title }) {
         return <h1>{title ? title : "Default title"}</h1>;
       }
-
+      
       function HomePage() {
+        const { useState } = React;
+        const [likes, setLikes] = React.useState(0);
+        
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+
         {
           /* Destructure and set the state of likes here - at the top of your component */
         }

@@ -107,13 +107,16 @@ function Gallery() {
   const { useState } = React;
   debugger;
   const [index, setIndex] = useState(0);
+  console.log("Current index:", index);
 
   function handleClick() {
     // Loop back to the first sculpture
     // index = 11 and sculptureList.length = 12, (11 + 1) % 12 results in 0, thus looping back to the first sculpture.
     // index = 0 and sculptureList.length = 12, (0 + 1) % 12 results in 1, moving to the next sculpture.
     // index = 5 and sculptureList.length = 12, (5 + 1) % 12 results in 6.
+    debugger;
     setIndex((index + 1) % sculptureList.length);
+    console.log(`At the bottom of the function: ${index}`);
   }
 
   let sculpture = sculptureList[index];
