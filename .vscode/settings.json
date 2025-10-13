@@ -11,5 +11,19 @@
       "group": "Default"
     }
   ],
+  "folder-color.pathColors": [
+    {
+      "folderPath": "dip-web-application-development-classes\\session-12\\activities\\assessment2_help_guide\\",
+      "badge": "🟣"
+    },
+    {
+      "folderPath": "dip-web-application-development-classes\\session-12\\activities\\src-activity2-prop-drilling\\",
+      "badge": "🟢"
+    },
+    {
+      "folderPath": "dip-web-application-development-classes\\session-12\\next-js\\",
+      "badge": "🟡"
+    }
+  ],
   // "liveServer.settings.root": "./session-03"
 }
