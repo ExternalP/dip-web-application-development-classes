@@ -1,6 +1,9 @@
+### ! = Force Un-ignore
+
 # *node_modules/*
 *idea
 node_modules
 .next
 # idea
 package-lock.json
+# !package-lock.json
