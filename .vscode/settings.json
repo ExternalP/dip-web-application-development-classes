@@ -1,10 +1,23 @@
 {
+  // "liveServer.settings.root": "./session-03"
+  "liveServer.settings.port": 5500,
+
   "[html]": {
     // Disabled so auto-rename-tag can be used as linkedEditing doesn't work in jsx/babel tags.
     "editor.linkedEditing": false,
   },
+  
+  "eslint.workingDirectories": [
+    {
+      // Makes ESLint infer working directory based on the location of package.json, .eslintignore and .eslintrc* files.
+      // Fixes "Parsing error: Cannot find module 'next/babel'" errors in JS/JSX files.
+      "mode": "auto"
+    },
+  ],
 
-  "liveServer.settings.port": 5500,
+  // "search-node-modules.path": "session-14/my-nextjs-app-activity-1/node_modules",
+
+  
   "favorites.resources": [
     {
       "filePath": "session-08\\in-class-code\\my-react-app\\readme.md",
@@ -25,5 +38,4 @@
       "badge": "🟡"
     }
   ],
-  // "liveServer.settings.root": "./session-03"
 }
